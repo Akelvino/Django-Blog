@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="relative inline-block w-full h-64 ">
+    <img src="{% static 'image/cricket.jpg' %}" alt="Cricket" class="absolute inset-0 w-full h-full object-cover">
+    <div class="absolute inset-0 bg-black/50"></div>
+    <div class="absolute inset-0">
+        <h1 class="text-white text-3xl font-bold">Text Overlay</h1>
+    </div>
+</div>
+
+
+
+{% endblock content %}
