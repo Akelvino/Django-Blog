@@ -1,16 +1,41 @@
 {% load static %}
 <!doctype html>
 <html>
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="{% static 'src/output.css' %}" rel="stylesheet">
+  <link href="{% static 'css/output.css' %}" rel="stylesheet">
 </head>
+
 <body>
-  <div class="max-w-4xl mx-auto">
+  <div class="max-w-4xl mx-auto ">
+    <header>
+      <nav class="flex justify-between items-center py-5">
+        <div>
+          <h1 class="text-4xl text-gray-700">Django Blog</h1>
+        </div>
+        <div class="flex gap-2">
+          <span>
+            <button type="button"
+              class=" bg-amber-400  shadow-xs font-medium leading-5 rounded-sm text-md px-4 py-2.5">Login</button>
+          </span>
+          <span>
+            <button type="button" class="border shadow-xs  leading-5 rounded-sm text-md px-4 py-2.5">Register</button>
+          </span>
+        </div>
+      </nav>
+      <hr class="text-gray-400">
+      <div class="py-3 flex justify-between">
+        {% for category in categories %}
+          <a href="#" class="text-gray-400 hover:text-gray-500">{{ category }}</a>
+        {% endfor %}
+      </div>
+    </header>
+    
     {% block content %}
     {% endblock content %}
   </div>
 </body>
-</html>
 
+</html>
